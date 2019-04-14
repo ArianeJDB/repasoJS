@@ -12,17 +12,30 @@
 const input = document.querySelector(".field");
 const button = document.querySelector(".btn");
 const list = document.querySelector(".list");
- const user = input.value;
+const user = input.value;
 
 const getName = () => { 
-  fetch('https://api.github.com/users/' + input.value)
+  const url = 'https://api.github.com/users/' + input.value; 
+  
+  fetch(url)
     .then(response => response.json())
     .then(data => {
+      const split = (data.name).split(' ');
+      const name = split[0];
+      const nameSplit = name.split('');
       
-      list.innerHTML = `<li>${data.name}</li>`;
+      // for(items of nameSplit) {
+      //   console.log();
+      // }
+      for (let i = 0; i < nameSplit.lenght; i++) {
+        console.log('hola');
+      }
+
+      list.innerHTML = `<li>${nameSplit}</li>`;
     });
 
  
+
 };
 
-button.addEventListener("click", getName());
+button.addEventListener("click", getName);
