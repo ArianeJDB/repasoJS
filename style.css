@@ -1,0 +1,16 @@
+.listItem {
+    list-style: none;
+    width: 100px;
+    height: 200px;
+    background: pink;
+    font-size: 120px;
+    margin: 10px;
+    
+}
+.list {
+    display: flex;
+    text-align: center;
+    
+    
+}
+

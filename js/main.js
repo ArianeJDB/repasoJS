@@ -24,18 +24,17 @@ const getName = () => {
       const name = split[0];
       const nameSplit = name.split('');
       
-      // for(items of nameSplit) {
-      //   console.log();
-      // }
-      for (let i = 0; i < nameSplit.lenght; i++) {
-        console.log('hola');
-      }
-
-      list.innerHTML = `<li>${nameSplit}</li>`;
+    console.log(nameSplit);
+    list.innerHTML = '';
+    for (const items of nameSplit) {
+    const listElement = document.createElement('li');
+    const letter = document.createTextNode(items);
+    listElement.appendChild(letter);
+    list.appendChild(listElement);
+    // listElement.classList.add(itemList);
+    listElement.setAttribute('class', 'listItem');
+    }
     });
-
- 
-
 };
 
 button.addEventListener("click", getName);
